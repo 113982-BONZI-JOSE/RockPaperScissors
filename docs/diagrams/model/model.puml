@@ -1,0 +1,61 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class Player {
+    Long id
+    String userName
+    String password
+    String email
+    String avatar
+    LongDateTime lastLoginDate
+}
+
+class Game{
+    Long id
+    String code
+    String name
+    String description
+    String rules
+}
+
+class Match{
+    Long id
+    Game game
+    Player player
+    LocalDateTime createdDate
+    MatchStatus status
+}
+
+class MatchRps {
+    Integer numberOfPlays;
+    Integer remainderPlays;
+    Integer player1Score;
+    Integer player2Score;
+    List<PlayRps> plays;
+    Long winnerId;
+}
+
+class PlayRps {
+    Long id;
+    Long matchRpsId;
+    ShapeHand shapeHandPlayer1;
+    ShapeHand shapeHandPlayer2;
+    Long winnerId;
+}
+
+enum ShapeHand {
+    ROCK
+    PAPER
+    SCISSORS
+}
+
+enum MatchStatus{
+    STARTED
+    FINISHED
+    CANCELED
+}
+
+MatchStatus --* Match
+Game --* Match
+Player --* Match
+@enduml

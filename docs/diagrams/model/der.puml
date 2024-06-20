@@ -1,0 +1,64 @@
+@startuml
+
+' hide the spot
+hide circle
+
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+entity "players"{
+    @ id : number <<generated>>
+    user_name : varchar
+    password : varchar
+    email : varchar
+    avatar : varchar
+    last_login : datetime
+    created_at : datetime
+    updated_at : datetime
+}
+
+entity "games"{
+    @ id : number <<generated>>
+    code : varchar
+    name : varchar
+    game_description : varchar
+    avatar : varchar
+    rules : blob
+    created_at : datetime
+    updated_at : datetime
+}
+
+entity "matches"{
+    @ id : number <<generated>>
+    # game_id : number
+    # match_id : number
+    status : varchar
+    end_at : datetime
+    created_at : datetime
+    updated_at : datetime
+}
+
+entity "matches_rps" {
+    @ id : number <<ref>>
+    number_of_plays : number
+    plays_remainder : number
+    player_1_score : number
+    player_2_score : number
+    # winner : number
+}
+
+entity "plays_rps" {
+    @ id : number <<generated>>
+    # match_id : number
+    shape_hand_player_1 : varchar
+    shape_hand_player_2 : varchar
+    # winner : number
+}
+
+matches }|--|| players
+matches }|--|| games
+matches ||--|| matches_rps
+matches_rps ||-|{ "plays_rps"
+matches_rps }|--|| players
+plays_rps }|--|| players
+@enduml

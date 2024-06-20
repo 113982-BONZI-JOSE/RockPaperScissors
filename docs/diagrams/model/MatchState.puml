@@ -1,0 +1,21 @@
+@startuml
+
+[*] --> STARTED
+STARTED --> FINISHED
+STARTED --> CANCELED
+STARTED : This is the initial state
+STARTED : when the match start and
+STARTED : when it is on going
+
+FINISHED : This is a final status
+FINISHED : when the match ends
+FINISHED : with a winner
+
+CANCELED : This is a final status
+CANCELED : when the match ends
+CANCELED : without a winner
+
+FINISHED --> [*]
+CANCELED --> [*]
+
+@endboard
