@@ -21,8 +21,11 @@ public abstract class Match {
 
     private Long id;
     private Game game;
-    private Player player;
+    private Player player1;
+    private Player player2;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
-    private LocalDateTime createdDate;
+    private LocalDateTime createdAt;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
+    private LocalDateTime updatedAt;
     private MatchStatus status;
 }

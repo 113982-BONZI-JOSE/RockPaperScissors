@@ -17,14 +17,14 @@ VALUES (1000000, 'RPS', 'Rock Paper Scissors',
         'The outcome of each round is determined by comparing the hand shapes, ' ||
         'and the player with the winning shape scores a point.');
 
-INSERT INTO matches(id, game_id, player_id, created_at, updated_at, status)
-VALUES (1000000, 1000000, 100, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'STARTED');
+INSERT INTO matches(id, game_id, player1_id, player2_id, created_at, updated_at, status)
+VALUES (1000000, 1000000, 100, 1000000, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'STARTED');
 
 INSERT INTO matches(id, game_id, player_id, created_at, updated_at, status)
-VALUES (1000001, 1000000, 100, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'FINISHED');
+VALUES (1000001, 1000000, 100, 1000000, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'FINISHED');
 
-INSERT INTO matches(id, game_id, player_id, created_at, updated_at, status)
-VALUES (1000002, 1000000, 100, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'CANCELED');
+INSERT INTO matches(id, game_id, player1_id, player2_id, created_at, updated_at, status)
+VALUES (1000002, 1000000, 100, 1000000, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'CANCELED');
 
 INSERT INTO matches_rps(id, number_of_plays, remainder_plays, player1Score, player2Score)
 VALUES (1000000, 10, 5, 3, 2);

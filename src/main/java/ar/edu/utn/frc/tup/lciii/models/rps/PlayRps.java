@@ -1,5 +1,6 @@
 package ar.edu.utn.frc.tup.lciii.models.rps;
 
+import ar.edu.utn.frc.tup.lciii.models.Play;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PlayRps {
+public class PlayRps implements Play {
 
     private Long id;
     private Long matchRpsId;

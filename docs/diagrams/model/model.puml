@@ -21,7 +21,8 @@ class Game{
 class Match{
     Long id
     Game game
-    Player player
+    Player player1
+    Player player2
     LocalDateTime createdDate
     MatchStatus status
 }
@@ -34,7 +35,8 @@ class MatchRps {
     List<PlayRps> plays;
     Long winnerId;
 }
-
+interface Play {
+}
 class PlayRps {
     Long id;
     Long matchRpsId;
@@ -58,4 +60,8 @@ enum MatchStatus{
 MatchStatus --* Match
 Game --* Match
 Player --* Match
+Match <|-- MatchRps
+MatchRps *-- PlayRps
+PlayRps *-l- ShapeHand
+PlayRps -r-|> Play
 @enduml

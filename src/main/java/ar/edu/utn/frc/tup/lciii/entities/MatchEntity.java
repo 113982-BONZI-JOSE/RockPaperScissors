@@ -21,9 +21,13 @@ public class MatchEntity {
     @ManyToOne
     private GameEntity game;
 
-    @JoinColumn(name="player_id")
+    @JoinColumn(name="player1_id")
     @ManyToOne
-    private PlayerEntity player;
+    private PlayerEntity player1;
+
+    @JoinColumn(name="player2_id")
+    @ManyToOne
+    private PlayerEntity player2;
 
     @Column
     private LocalDateTime createdDate;

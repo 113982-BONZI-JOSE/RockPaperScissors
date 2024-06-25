@@ -50,9 +50,11 @@ public class MatchFactory {
 
     private static Match getBasicMatch(Player player, Game game){
         Match match = getMatchInstance(game.getCode());
-        match.setPlayer(player);
+        match.setPlayer(player1);
+        match.setPlayer(player2);
         match.setGame(game);
-        match.setCreatedDate(LocalDateTime.now());
+        match.setCreatedAt(LocalDateTime.now());
+        match.setUpdatedAt(LocalDateTime.now());
         match.setStatus(MatchStatus.STARTED);
         return match;
     }
